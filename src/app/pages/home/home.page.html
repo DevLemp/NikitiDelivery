@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button class="ion-text-start" routerLink="../user-profile"><ion-icon name="person-circle-outline"></ion-icon></ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar placeholder="Δοκίμασε 'Muse'"
+                 (ionInput)="getItems($event)"
+                 [(ngModel)]="searchTerm"
+                 animated
+                 showCancelButton="focus"
+                 ></ion-searchbar>
+  <ion-list *ngIf="this.hidden">
+    <ion-item *ngFor="let item of items" >
+      <ion-input>{{ item }}</ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Thuram</ion-title>
+  </ion-toolbar>
+</ion-footer>
